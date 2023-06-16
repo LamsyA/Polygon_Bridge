@@ -5,6 +5,7 @@
 // will compile your contracts, add the Hardhat Runtime Environment's members to the
 // global scope, and execute the script.
 const hre = require("hardhat");
+const {FXRootContractAbi} = require("../abi/FXRootContractAbi")
 
 async function main() {
  
@@ -23,10 +24,27 @@ async function main() {
 
   console.log('======================>')
 	console.log("Successfully minted")
+
+  const easy = await ethers.getContractAt(
+		'EasyNFT',
+		easynft.address
+	)
+	const fxRoot = await ethers.getContractAt(
+		FXRootContractAbi,
+		'0xF9bc4a80464E48369303196645e876c8C7D972de'
+	)
+	// await nftCollection.approve(fxRoot.address, 1)
+	await fxRoot.deposit(
+		easy.address,
+		'0x6BeF65D67c45505bA9BD5A747bA18Bb078E63549',
+		1,
+		'0x6566'
+	)
+	console.log('approved and deposited')
 }
-pattern
-// We recommend this  to be able to use async/await everywhere
-// and properly handle errors.
+
+
+
 main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
