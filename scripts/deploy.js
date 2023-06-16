@@ -10,16 +10,22 @@ async function main() {
  
 
   const EasyNFT = await hre.ethers.getContractFactory("EasyNFT");
-  const easynft = await EasyNFT.deploy("EasyNFT", "EST");
+  const easynft = await EasyNFT.deploy();
 
   await easynft.deployed();
 
   console.log(
     ` deployed to: ${easynft.address}`
   );
-}
 
-// We recommend this pattern to be able to use async/await everywhere
+  const minting = await easynft.mintNFT(5)
+	await minting.wait()
+
+  console.log('======================>')
+	console.log("Successfully minted")
+}
+pattern
+// We recommend this  to be able to use async/await everywhere
 // and properly handle errors.
 main().catch((error) => {
   console.error(error);
