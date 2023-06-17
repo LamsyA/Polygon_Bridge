@@ -6,7 +6,7 @@ async function main() {
 
   // Get ERC721 contract instance
   const EasyNFT = await ethers.getContractFactory("EasyNFT");
-  const easynft = await EasyNFT.attach("0x79900000B214827062E6c1A3c81AA8bd6Def1606");
+  const easynft = await EasyNFT.attach("0x17886eDece693248aFf0c1EB225aA46c7e85cf2A");
 
   // Get FXRoot contract instance
   const fxRootAddress = "0xF9bc4a80464E48369303196645e876c8C7D972de"; // FxRoot contract address on Mumbai
