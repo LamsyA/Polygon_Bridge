@@ -1,4 +1,3 @@
-Certainly! Here's an example of a README documentation for the solution:
 
 # ERC721 NFT Deployment and Transfer using Hardhat and Polygon
 
@@ -104,6 +103,5 @@ Feel free to modify and adapt
 
  the code to suit your specific requirements.
 
----
 
-This README provides an overview of the solution and outlines the necessary steps to deploy an ERC721 NFT contract, mint NFTs, transfer them to Polygon Mumbai, and test the balance. Make sure to update the placeholders and provide any additional information specific to your project.
+
